@@ -40,6 +40,7 @@ if (testGroupingDisabled || cypressTestGroup === 1) {
 }
 
 if (testGroupingDisabled || cypressTestGroup === 2) {
+  require('./documentation');
   require('./eu-taxonomy-financials');
   require('./eu-taxonomy-non-financials');
   require('./vsme');
