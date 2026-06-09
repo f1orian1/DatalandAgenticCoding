@@ -40,6 +40,7 @@ const AdminRequestsOverviewLegacy = (): Promise<RouteComponent> =>
 const ViewTeaserCompanyData = (): Promise<RouteComponent> => import('@/components/pages/ViewTeaserCompanyData.vue');
 const ChooseFrameworkForDataUpload = (): Promise<RouteComponent> =>
   import('@/components/pages/ChooseFrameworkForDataUpload.vue');
+const DocumentationPage = (): Promise<RouteComponent> => import('@/components/pages/DocumentationPage.vue');
 import PlatformRedirect from '@/components/resources/landingPage/PlatformRedirect.vue';
 
 const routes = [
@@ -57,6 +58,15 @@ const routes = [
     component: AboutPage,
     meta: {
       requiresAuthentication: false,
+    },
+  },
+  {
+    path: '/documentation',
+    name: 'Documentation',
+    component: DocumentationPage,
+    meta: {
+      initialTabId: 'documentation',
+      requiresAuthentication: true,
     },
   },
   {

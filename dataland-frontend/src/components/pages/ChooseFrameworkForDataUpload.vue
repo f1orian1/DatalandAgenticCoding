@@ -12,6 +12,10 @@
               <div id="euTaxonomyLabel" class="col-3 p-3">
                 <h3>EU Taxonomy</h3>
                 <p>{{ buildSubtitle('EU Taxonomy') }}</p>
+                <RouterLink :to="{ path: '/documentation' }" class="documentation-link">
+                  <i class="pi pi-info-circle documentation-link-icon" aria-hidden="true" />
+                  Learn more in documentation
+                </RouterLink>
               </div>
               <div class="col-9 d-card">
                 <div id="eutaxonomyDatasetsContainer">
@@ -44,6 +48,10 @@
               <div :id="dataType + 'Label'" class="col-3 p-3">
                 <h3>{{ humanizeString(dataType) }}</h3>
                 <p>{{ buildSubtitle(humanizeString(dataType)) }}</p>
+                <RouterLink :to="{ path: '/documentation', query: { framework: dataType } }" class="documentation-link">
+                  <i class="pi pi-info-circle documentation-link-icon" aria-hidden="true" />
+                  Learn more in documentation
+                </RouterLink>
               </div>
               <div class="col-9 d-card">
                 <MetaInfoPerCompanyAndFramework
@@ -255,6 +263,16 @@ export default defineComponent({
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px dotted var(--input-separator);
+}
+
+.documentation-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--spacing-xs);
+}
+
+.documentation-link-icon {
+  margin-right: 0.35rem;
 }
 
 .uploadFormWrapper {
